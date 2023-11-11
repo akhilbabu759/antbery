@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "403739509222",
+    "project_id": "antbery-49fb6",
+    "storage_bucket": "antbery-49fb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403739509222:android:a5f80a5a6fe3038f489627",
+        "android_client_info": {
+          "package_name": "com.example.antbery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWGNzNQEUuRLmDMsW1M7SvLvtPyaKlyBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

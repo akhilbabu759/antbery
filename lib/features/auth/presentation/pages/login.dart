@@ -1,7 +1,7 @@
 import 'package:antbery/config/them/app_style.dart';
 import 'package:antbery/features/auth/presentation/pages/widget/top_container.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:gap/gap.dart';
 
 class LoginPage extends StatelessWidget {
@@ -29,17 +29,13 @@ class LoginPage extends StatelessWidget {
                       children: [
                         Text(
                           'Sign In',
-                          style: GoogleFonts.italiana(
-                              textStyle: TextStyle(
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.08,
-                                  color: AppStryle().whiteCle
-                                  // Additional styling options
-                                  )),
+                          style: AppStryle().textStyle(
+                              MediaQuery.of(context).size.width * 0.08),
                           textAlign: TextAlign.center,
                         ),
                         Gap(MediaQuery.of(context).size.height * 0.08),
-                        TextFormField( textAlign: TextAlign.center,
+                        TextFormField(
+                          textAlign: TextAlign.center,
                           // controller: _textController,
                           decoration: InputDecoration(
                             hintText: 'Email',
@@ -80,7 +76,7 @@ class LoginPage extends StatelessWidget {
                           color: AppStryle().whiteCle,
                           thickness: 1.5,
                         ),
-                        Gap(10),
+                        const Gap(10),
                         CircleAvatar(
                           backgroundColor: AppStryle().whiteCle,
                           radius: MediaQuery.of(context).size.height * 0.028,
