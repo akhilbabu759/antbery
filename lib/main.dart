@@ -11,12 +11,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'firebase_options.dart';
 
 void main() async {
+    setUpLocator();
    WidgetsFlutterBinding.ensureInitialized();
+  
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  setUpLocator();
+  
   runApp(DevicePreview(
     enabled: false,
     builder: (context) => const MyApp(),

@@ -6,5 +6,5 @@ import 'package:get_it/get_it.dart';
 final locator = GetIt.instance;
 void setUpLocator() {
   locator.registerFactory(() => CarouselBloc());
-  locator.registerSingleton(()=>AppStryle()); 
+  locator.registerSingleton(() => AppStryle());
 }

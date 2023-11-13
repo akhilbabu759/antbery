@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:antbery/config/them/app_style.dart';
 import 'package:antbery/features/home/presentaion/pages/widget/home_top_container.dart';
 import 'package:antbery/features/home/presentaion/pages/widget/horizontal_listview.dart';
+import 'package:antbery/injectin_containerdart.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:gap/gap.dart';
@@ -11,47 +14,94 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log(AppStryle().appSize(context).height.toString());
     return Scaffold(
-      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const HomeTopContainer(),
-        Gap(AppStryle().appSize(context).height * 0.05),
-        Expanded(
-          child: GestureDetector(onVerticalDragDown: (details) {
-            
-          },
-            child: Container(
-              width: AppStryle().mainContainerWidth(context),
-              decoration: BoxDecoration(
-                  color: AppStryle().bluMin,
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(50))),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: Column(
+      body: Scrollbar(
+        child: SingleChildScrollView(
+          physics: AlwaysScrollableScrollPhysics(),
+          scrollDirection: Axis.vertical,
+          child: SizedBox(
+            width: double.infinity,
+            child: Expanded(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Gap(20),
-                    Text('HOT Reads'),
-                    Gap(10),
-                    HorizontalListview(),
-                    Gap(20),
-                    Text('data'),
-                    Gap(20),
-                    HorizontalListview(),
-                    Container(
-                      height: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                        Radius.circular(20),
-                        
-                      ),color: AppStryle().whitegrayCle,),
+                    const HomeTopContainer(),
+                    Gap(AppStryle().appSize(context).height * 0.05),
+                    GestureDetector(
+                      onVerticalDragDown: (details) {},
+                      child: Container(
+                        width: AppStryle().mainContainerWidth(context),
+                        decoration: BoxDecoration(
+                            color: AppStryle().bluMin,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(50))),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 12.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Gap(20),
+                              Text('HOT Reads'),
+                              Gap(10),
+                              HorizontalListview(),
+                              Gap(20),
+                              Text('data'),
+                              Gap(20),
+                              HorizontalListview(),
+                              Gap(20),
+                              Container(
+                                height: AppStryle().appSize(context).height >=
+                                        837
+                                    ? AppStryle().appSize(context).height * 0.75
+                                    : AppStryle().appSize(context).height * 0.6,
+                                width: AppStryle().appSize(context).width,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                  color: AppStryle().whitegrayCle,
+                                ),
+                                child: GridView.builder(
+                                  physics: NeverScrollableScrollPhysics(),
+                                  gridDelegate:
+                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                    childAspectRatio: AppStryle()
+                                            .appSize(context)
+                                            .height *
+                                        0.14 /
+                                        (AppStryle().appSize(context).height *
+                                            0.14) *
+                                        0.8,
+                                    crossAxisCount:
+                                        3, // Number of columns in the grid
+                                    crossAxisSpacing:
+                                        4.0, // Spacing between columns
+                                    mainAxisSpacing:
+                                        3.0, // Spacing between rows
+                                  ),
+                                  itemCount: 9,
+                                  itemBuilder: (context, index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Image.network(
+                                          'https://m.media-amazon.com/images/I/41RVqoveEpL._SY445_SX342_.jpg',
+                                          fit: BoxFit.fill),
+                                    );
+                                  },
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                     )
-                  ],
-                ),
-              ),
+                  ]),
             ),
           ),
-        )
-      ]),
+        ),
+      ),
     );
   }
 }
