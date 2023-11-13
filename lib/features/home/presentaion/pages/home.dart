@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:antbery/config/them/app_style.dart';
+import 'package:antbery/features/home/data/data_source/remote/carousel_data_sourece.dart';
 import 'package:antbery/features/home/presentaion/pages/widget/home_top_container.dart';
 import 'package:antbery/features/home/presentaion/pages/widget/horizontal_listview.dart';
 import 'package:antbery/injectin_containerdart.dart';
@@ -14,6 +15,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CarouselRemoteDataSourceImpl().getCarousels();
     log(AppStryle().appSize(context).height.toString());
     return Scaffold(
       body: Scrollbar(
