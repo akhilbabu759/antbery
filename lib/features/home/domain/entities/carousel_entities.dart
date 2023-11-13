@@ -1,12 +1,12 @@
 import 'package:equatable/equatable.dart';
 
 class CarouselsEntities extends Equatable{
-  final List<String> carouselList;
+  final String img_url;
 
-  const CarouselsEntities({required this.carouselList});
+  const CarouselsEntities({required this.img_url});
   
   @override
   
-  List<Object?> get props =>[carouselList];
+  List<Object?> get props =>[img_url];
 
 }

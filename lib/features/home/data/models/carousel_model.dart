@@ -1,13 +1,13 @@
 import 'package:antbery/features/home/domain/entities/carousel_entities.dart';
 
-class Carouselodel extends CarouselsEntities {
-  const Carouselodel({required List<String> carosellist})
-      : super(carouselList: carosellist);
-      factory Carouselodel.fromJson(Map<String, dynamic> json) {
-    return Carouselodel(carosellist:  List<String>.from(json['images']),
+class Carouselmodel extends CarouselsEntities {
+  const Carouselmodel({required String img_url})
+      : super(img_url: img_url);
+      factory Carouselmodel.fromJson(Map<String, dynamic> json) {
+    return Carouselmodel(img_url:  json['images'],
     );
 }
 CarouselsEntities toEntity() => CarouselsEntities(
-      carouselList: carouselList
+      img_url: img_url
       );
 }
