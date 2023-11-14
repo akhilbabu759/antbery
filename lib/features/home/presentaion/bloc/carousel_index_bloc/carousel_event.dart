@@ -1,12 +1,12 @@
 part of 'carousel_bloc.dart';
 
-sealed class CarouselEvent extends Equatable {
-  const CarouselEvent();
+sealed class CarouseIndexlEvent extends Equatable {
+  const CarouseIndexlEvent();
 
   @override
   List<Object> get props => [];
 }
-class OnIndexChange extends CarouselEvent{
+class OnIndexChange extends CarouseIndexlEvent{
   final int chnagedIndex;
 
   OnIndexChange(this.chnagedIndex);

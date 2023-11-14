@@ -48,6 +48,7 @@ dependencies:
   get_it: ^7.6.4
   dartz: ^0.10.1
   cloud_firestore: ^4.13.0
+  shimmer: ^3.0.0
  
 
 dev_dependencies:

@@ -7,7 +7,7 @@ class GetCarouselsUseacse{
   final CarouselRepository carouselRepository;
 
   GetCarouselsUseacse(this.carouselRepository);
-   Future<Either<Failure,CarouselsEntities>> execute( ){
+   Future<Either<Failure,List<CarouselsEntities>>> execute( ){
     return carouselRepository.getCarousels();
   }
 }

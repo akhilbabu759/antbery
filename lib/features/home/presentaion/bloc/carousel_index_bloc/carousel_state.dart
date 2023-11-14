@@ -1,17 +1,20 @@
 part of 'carousel_bloc.dart';
 
-abstract class CarouselState extends Equatable {
-  const CarouselState();
+abstract class CarouseIndexlState extends Equatable {
+  const CarouseIndexlState();
   
   @override
   List<Object> get props => [];
 }
 
-// final class CarouselInitial extends CarouselState {}
-class CarouselindxChanged extends CarouselState{
+
+
+class CarouselindxChanged extends CarouseIndexlState{
   final int indexChange;
 
   CarouselindxChanged(this.indexChange);
   @override
   List<Object> get props => [indexChange];
 }
+
+
