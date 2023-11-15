@@ -6,3 +6,8 @@ sealed class HomeBooksEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+class OnBookget extends HomeBooksEvent{
+  const OnBookget();
+  @override
+   List<Object> get props => [];
+}

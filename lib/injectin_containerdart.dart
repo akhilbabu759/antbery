@@ -10,6 +10,7 @@ import 'package:antbery/features/home/domain/usecase/get_carousel.dart';
 import 'package:antbery/features/home/presentaion/bloc/bloc/carousel_bloc.dart';
 
 import 'package:antbery/features/home/presentaion/bloc/carousel_index_bloc/carousel_bloc.dart';
+import 'package:antbery/features/home/presentaion/bloc/home_books/home_books_bloc.dart';
 
 import 'package:get_it/get_it.dart';
 
@@ -23,7 +24,7 @@ void setUpLocator() {
       () => CarouselRepositoriesImpl(carouselRemoteDataSource: locator()));
   locator.registerLazySingleton<CarouselRemoteDataSource>(
       () => CarouselRemoteDataSourceImpl());
-      //  locator.registerFactory(() => 'CarouselBloc(locator())');
+        locator.registerFactory(() => HomeBooksBloc(locator()));
        locator.registerLazySingleton(() => GetBookListUseacse(locator()));
        locator.registerLazySingleton<BookListRepository>(
       () => BookListRepositoryImpl(bookListRemoteDataSource: locator()));

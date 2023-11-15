@@ -5,6 +5,7 @@ import 'package:antbery/features/home/data/repositories/book_list_repositories_i
 import 'package:antbery/features/home/presentaion/bloc/bloc/carousel_bloc.dart';
 
 import 'package:antbery/features/home/presentaion/bloc/carousel_index_bloc/carousel_bloc.dart';
+import 'package:antbery/features/home/presentaion/bloc/home_books/home_books_bloc.dart';
 import 'package:antbery/features/splash/presantation/pages/splash.dart';
 import 'package:antbery/injectin_containerdart.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -43,6 +44,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => locator<CarouselIndexBloc>(),
         ),
+        BlocProvider(
+          create: (context) => locator<HomeBooksBloc>(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
