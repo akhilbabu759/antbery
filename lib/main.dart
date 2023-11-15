@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:antbery/features/home/data/data_source/remote/book_list_data_source.dart';
+import 'package:antbery/features/home/data/repositories/book_list_repositories_iplement.dart';
 import 'package:antbery/features/home/presentaion/bloc/bloc/carousel_bloc.dart';
 
 import 'package:antbery/features/home/presentaion/bloc/carousel_index_bloc/carousel_bloc.dart';
@@ -20,6 +22,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // BookListRemoteDataSourceImpl( ).getBookList();
 
   runApp(DevicePreview(
     enabled: false,

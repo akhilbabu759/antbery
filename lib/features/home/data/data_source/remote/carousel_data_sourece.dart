@@ -17,7 +17,7 @@ class CarouselRemoteDataSourceImpl extends CarouselRemoteDataSource{
     final h= documents.map((e) => e.data());
 // log(h.first.toString());
 
-    // log(querySnapshot.docs.());
+     log(querySnapshot.docs.toString());
     log(querySnapshot.docs.first['images'].toString());
     // Iterable<Object?> listUrls=documents.map((e) => e.data());
     // log(listUrls.map((e) => e).toString(),name: 'bfjk');
