@@ -12,11 +12,15 @@ import 'package:shimmer/shimmer.dart';
 
 class HomeTopContainer extends StatelessWidget {
   const HomeTopContainer({
-    super.key,
+    super.key, required this.fun,
   });
+  final Function fun;
 
   @override
   Widget build(BuildContext context) {
+    
+
+  
     int len = 0;
     return Container(
       height: AppStryle().appSize(context).height * 0.35,
@@ -33,7 +37,9 @@ class HomeTopContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                   fun(context);
+                  },
                   icon: Icon(
                     Icons.menu,
                     color: AppStryle().whiteCle,
