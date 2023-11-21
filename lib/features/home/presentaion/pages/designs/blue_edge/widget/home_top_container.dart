@@ -2,8 +2,10 @@ import 'package:antbery/config/them/app_style.dart';
 import 'package:antbery/features/home/presentaion/bloc/bloc/carousel_bloc.dart';
 
 import 'package:antbery/features/home/presentaion/bloc/carousel_index_bloc/carousel_bloc.dart';
+import 'package:antbery/features/search/presentation/pages/search_widget.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 // import 'package:carousel_slider/carousel_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,7 +47,14 @@ class HomeTopContainer extends StatelessWidget {
                     color: AppStryle().whiteCle,
                   )),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => ProductSearchPage(),
+                ),
+              );
+                  },
                   icon: Icon(
                     Icons.search,
                     color: AppStryle().whiteCle,
