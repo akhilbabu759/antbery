@@ -20,18 +20,17 @@ final locator = GetIt.instance;
 void setUpLocator() {
   locator.registerFactory(() => CarouselBloc(locator()));
   locator.registerFactory(() => CarouselIndexBloc());
-  locator.registerSingleton(() => ProBlack());
+  locator.registerSingleton(() => ProBlackStyle());
+  locator.registerSingleton(() => BlueEdgeStryle());
   locator.registerLazySingleton(() => GetCarouselsUseacse(locator()));
   locator.registerLazySingleton<CarouselRepository>(
       () => CarouselRepositoriesImpl(carouselRemoteDataSource: locator()));
   locator.registerLazySingleton<CarouselRemoteDataSource>(
       () => CarouselRemoteDataSourceImpl());
-        locator.registerFactory(() => HomeBooksBloc(locator()));
-       locator.registerLazySingleton(() => GetBookListUseacse(locator()));
-       locator.registerLazySingleton<BookListRepository>(
+  locator.registerFactory(() => HomeBooksBloc(locator()));
+  locator.registerLazySingleton(() => GetBookListUseacse(locator()));
+  locator.registerLazySingleton<BookListRepository>(
       () => BookListRepositoryImpl(bookListRemoteDataSource: locator()));
-       locator.registerLazySingleton<BookListRemoteDataSource>(
+  locator.registerLazySingleton<BookListRemoteDataSource>(
       () => BookListRemoteDataSourceImpl());
-
-
 }
