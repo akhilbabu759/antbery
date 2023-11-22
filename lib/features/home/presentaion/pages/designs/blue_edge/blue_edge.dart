@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 
 import 'widget/home_grideview.dart';
 import 'widget/home_top_container.dart';
-import 'widget/horizontal_listview.dart';
+import '../../../../../../config/comon_widget/horizontal_listview.dart';
 
 class BlueEdge extends StatelessWidget {
   const BlueEdge({

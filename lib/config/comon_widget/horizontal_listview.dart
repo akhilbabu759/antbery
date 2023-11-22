@@ -7,6 +7,7 @@ import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:antbery/features/home/presentaion/bloc/home_books/home_books_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:shimmer/shimmer.dart';
 
 class HorizontalListview extends StatelessWidget {
@@ -25,8 +26,8 @@ class HorizontalListview extends StatelessWidget {
            if (state is HommeBookLoading) {
                   return Center(
                     child: Shimmer.fromColors(
-                      baseColor: Colors.grey[300]!,
-                      highlightColor: const Color.fromARGB(255, 249, 233, 233)!,
+                      baseColor: Color.fromARGB(255, 85, 85, 85),
+                      highlightColor: Color.fromARGB(255, 117, 116, 116),
                       period: Duration(seconds: 2),
                       child: Container(
                         decoration: BoxDecoration(
@@ -47,11 +48,18 @@ class HorizontalListview extends StatelessWidget {
               log(state.result[index].imgUrl,name: 'url');
 
               return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.network(state.result[index].imgUrl??
-                  'https://m.media-amazon.com/images/I/41RVqoveEpL._SY445_SX342_.jpg'
-                  ,
-                  fit: BoxFit.fitHeight,
+                padding: const EdgeInsets.only(right:10.0,left: 3),
+                child: Column(
+                  children: [
+                    SizedBox(width: MediaQuery.of(context).size.width*0.26,height: MediaQuery.of(context).size.height*0.2,
+                      child: Image.network(state.result[index].imgUrl??
+                        'https://m.media-amazon.com/images/I/41RVqoveEpL._SY445_SX342_.jpg'
+                        ,
+                        fit: BoxFit.fill,
+                      ),
+                    ),Gap(5),
+                    Text(state.result[index].bookName,style: TextStyle(color: Color.fromARGB(255, 160, 160, 160)),overflow: TextOverflow.ellipsis,)
+                  ],
                 ),
               );
             },
