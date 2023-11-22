@@ -1,4 +1,4 @@
-import 'package:antbery/config/them/app_style.dart';
+import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:antbery/features/home/data/data_source/remote/book_list_data_source.dart';
 import 'package:antbery/features/home/data/data_source/remote/carousel_data_sourece.dart';
 import 'package:antbery/features/home/data/repositories/book_list_repositories_iplement.dart';
@@ -14,11 +14,13 @@ import 'package:antbery/features/home/presentaion/bloc/home_books/home_books_blo
 
 import 'package:get_it/get_it.dart';
 
+import 'config/them/pro_black.dart';
+
 final locator = GetIt.instance;
 void setUpLocator() {
   locator.registerFactory(() => CarouselBloc(locator()));
   locator.registerFactory(() => CarouselIndexBloc());
-  locator.registerSingleton(() => AppStryle());
+  locator.registerSingleton(() => ProBlack());
   locator.registerLazySingleton(() => GetCarouselsUseacse(locator()));
   locator.registerLazySingleton<CarouselRepository>(
       () => CarouselRepositoriesImpl(carouselRemoteDataSource: locator()));
