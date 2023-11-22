@@ -1,4 +1,4 @@
-import 'package:antbery/config/them/app_style.dart';
+import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:flutter/material.dart';
 
 class TopContainer extends StatelessWidget {
@@ -16,12 +16,12 @@ class TopContainer extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius:
                   const BorderRadius.only(bottomRight: Radius.circular(100)),
-              color: AppStryle().bluMin),
+              color: BlueEdgeStryle().bluMin),
           child: Center(
               child: Text(
             'Are You finding \n a book !',
             style:
-                AppStryle().textStyle(MediaQuery.of(context).size.width * 0.08),
+                BlueEdgeStryle().textStyle(MediaQuery.of(context).size.width * 0.08),
             textAlign: TextAlign.center,
           )),
         ),
@@ -30,10 +30,10 @@ class TopContainer extends StatelessWidget {
           right: 18,
           child: CircleAvatar(
             radius: MediaQuery.of(context).size.width * 0.05,
-            backgroundColor: AppStryle().whiteCle,
+            backgroundColor: BlueEdgeStryle().whiteCle,
             child: CircleAvatar(
               radius: MediaQuery.of(context).size.width * 0.04,
-              backgroundColor: AppStryle().bluMin,
+              backgroundColor: BlueEdgeStryle().bluMin,
             ),
           ),
         )

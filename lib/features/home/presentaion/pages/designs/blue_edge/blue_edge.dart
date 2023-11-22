@@ -1,4 +1,4 @@
-import 'package:antbery/config/them/app_style.dart';
+import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -15,6 +15,7 @@ class BlueEdge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scrollbar(
+      
       child: SingleChildScrollView(
         physics: AlwaysScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
@@ -25,13 +26,13 @@ class BlueEdge extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   HomeTopContainer(fun: func),
-                  Gap(AppStryle().appSize(context).height * 0.05),
+                  Gap(BlueEdgeStryle().appSize(context).height * 0.05),
                   GestureDetector(
                     onVerticalDragDown: (details) {},
                     child: Container(
-                      width: AppStryle().mainContainerWidth(context),
+                      width: BlueEdgeStryle().mainContainerWidth(context),
                       decoration: BoxDecoration(
-                          color: AppStryle().bluMin,
+                          color: BlueEdgeStryle().bluMin,
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(50))),
                       child: Padding(
@@ -43,7 +44,7 @@ class BlueEdge extends StatelessWidget {
                             Text(
                               'HOT Reads',
                               style: TextStyle(
-                                  color: AppStryle().whiteCle,
+                                  color: BlueEdgeStryle().whiteCle,
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic),
@@ -53,7 +54,7 @@ class BlueEdge extends StatelessWidget {
                             Gap(20),
                             Text('Recent',
                                 style: TextStyle(
-                                    color: AppStryle().whiteCle,
+                                    color: BlueEdgeStryle().whiteCle,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FontStyle.italic)),

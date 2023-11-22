@@ -1,4 +1,4 @@
-import 'package:antbery/config/them/app_style.dart';
+import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:antbery/features/home/presentaion/bloc/bloc/carousel_bloc.dart';
 
 import 'package:antbery/features/home/presentaion/bloc/carousel_index_bloc/carousel_bloc.dart';
@@ -25,10 +25,10 @@ class HomeTopContainer extends StatelessWidget {
   
     int len = 0;
     return Container(
-      height: AppStryle().appSize(context).height * 0.35,
-      width: AppStryle().mainContainerWidth(context),
+      height: BlueEdgeStryle().appSize(context).height * 0.35,
+      width: BlueEdgeStryle().mainContainerWidth(context),
       decoration: BoxDecoration(
-          color: AppStryle().bluMin,
+          color: BlueEdgeStryle().bluMin,
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(50),
               bottomRight: Radius.circular(50))),
@@ -44,7 +44,7 @@ class HomeTopContainer extends StatelessWidget {
                   },
                   icon: Icon(
                     Icons.menu,
-                    color: AppStryle().whiteCle,
+                    color: BlueEdgeStryle().whiteCle,
                   )),
               IconButton(
                   onPressed: () {
@@ -57,7 +57,7 @@ class HomeTopContainer extends StatelessWidget {
                   },
                   icon: Icon(
                     Icons.search,
-                    color: AppStryle().whiteCle,
+                    color: BlueEdgeStryle().whiteCle,
                   )),
             ],
           ),
@@ -75,8 +75,8 @@ class HomeTopContainer extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: const Color.fromARGB(255, 138, 138, 138)),
-                        width: AppStryle().appSize(context).height * 0.45,
-                        height: AppStryle().appSize(context).height * 0.20,
+                        width: BlueEdgeStryle().appSize(context).height * 0.45,
+                        height: BlueEdgeStryle().appSize(context).height * 0.20,
                         // Replace this with your desired shimmering content
                       ),
                     ),
@@ -88,7 +88,7 @@ class HomeTopContainer extends StatelessWidget {
                   return CarouselSlider(
                     items: stat.result.map((e) {
                       return Container(
-                          height: AppStryle().appSize(context).height * 0.15,
+                          height: BlueEdgeStryle().appSize(context).height * 0.15,
                           width: double.infinity,
                           decoration: BoxDecoration(
                               borderRadius:
@@ -99,7 +99,7 @@ class HomeTopContainer extends StatelessWidget {
                           ));
                     }).toList(),
                     options: CarouselOptions(
-                      height: AppStryle().appSize(context).height * 0.2,
+                      height: BlueEdgeStryle().appSize(context).height * 0.2,
                       enlargeCenterPage: true,
                       autoPlay: true,
                       autoPlayInterval: Duration(seconds: 5),
@@ -118,7 +118,7 @@ class HomeTopContainer extends StatelessWidget {
                 }
                 return Text('');
               }),
-              Gap(AppStryle().appSize(context).height * 0.025),
+              Gap(BlueEdgeStryle().appSize(context).height * 0.025),
               BlocBuilder<CarouselIndexBloc, CarouseIndexlState>(
                   builder: (context, state) {
                 return Row(

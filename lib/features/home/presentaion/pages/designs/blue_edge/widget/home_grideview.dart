@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:antbery/config/them/app_style.dart';
+import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:antbery/features/home/presentaion/bloc/home_books/home_books_bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +30,7 @@ class HomeGrideview extends StatelessWidget {
                                             color: const Color.fromARGB(
                                                 255, 138, 138, 138)),
                                         width: double.infinity,
-                                        height: AppStryle()
+                                        height: BlueEdgeStryle()
                                                 .appSize(context)
                                                 .height *
                                             0.23,
@@ -42,31 +42,31 @@ class HomeGrideview extends StatelessWidget {
                                 if(state is HomeBookLoaded) {
                                   int len = state.result.length;
                                  return Container(
-                                    height: AppStryle()
+                                    height: BlueEdgeStryle()
                                                 .appSize(context)
                                                 .height >=
                                             837
-                                        ? AppStryle().appSize(context).height *
+                                        ? BlueEdgeStryle().appSize(context).height *
                                             0.75
-                                        : AppStryle().appSize(context).height *
+                                        : BlueEdgeStryle().appSize(context).height *
                                             0.6,
-                                    width: AppStryle().appSize(context).width,
+                                    width: BlueEdgeStryle().appSize(context).width,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(20),
                                         topRight: Radius.circular(20),
                                       ),
-                                      color: AppStryle().whitegrayCle,
+                                      color: BlueEdgeStryle().whitegrayCle,
                                     ),
                                     child: GridView.builder(
                                       physics: NeverScrollableScrollPhysics(),
                                       gridDelegate:
                                           SliverGridDelegateWithFixedCrossAxisCount(
-                                        childAspectRatio: AppStryle()
+                                        childAspectRatio: BlueEdgeStryle()
                                                 .appSize(context)
                                                 .height *
                                             0.14 /
-                                            (AppStryle()
+                                            (BlueEdgeStryle()
                                                     .appSize(context)
                                                     .height *
                                                 0.14) *
@@ -105,7 +105,7 @@ class HomeGrideview extends StatelessWidget {
                                             color: const Color.fromARGB(
                                                 255, 138, 138, 138)),
                                         width: double.infinity,
-                                        height: AppStryle()
+                                        height: BlueEdgeStryle()
                                                 .appSize(context)
                                                 .height *
                                             0.23,

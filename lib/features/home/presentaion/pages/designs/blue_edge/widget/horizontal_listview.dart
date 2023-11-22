@@ -3,7 +3,7 @@
 
 import 'dart:developer';
 
-import 'package:antbery/config/them/app_style.dart';
+import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:antbery/features/home/presentaion/bloc/home_books/home_books_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +17,7 @@ class HorizontalListview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppStryle().appSize(context).height * 0.23,
+      height: BlueEdgeStryle().appSize(context).height * 0.23,
       width: double.infinity,
       child: BlocBuilder<HomeBooksBloc, HomeBooksState>(
         builder: (context, state) {
@@ -33,7 +33,7 @@ class HorizontalListview extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             color: const Color.fromARGB(255, 138, 138, 138)),
                         width: double.infinity,
-                        height: AppStryle().appSize(context).height * 0.23,
+                        height: BlueEdgeStryle().appSize(context).height * 0.23,
                         // Replace this with your desired shimmering content
                       ),
                     ),

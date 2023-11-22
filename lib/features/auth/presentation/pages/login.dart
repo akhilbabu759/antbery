@@ -1,4 +1,4 @@
-import 'package:antbery/config/them/app_style.dart';
+import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:antbery/features/auth/presentation/pages/widget/top_container.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius:
                         const BorderRadius.only(topRight: Radius.circular(100)),
-                    color: AppStryle().bluMin),
+                    color: BlueEdgeStryle().bluMin),
                 child: Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: Column(
@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
                       children: [
                         Text(
                           'Sign In',
-                          style: AppStryle().textStyle(
+                          style: BlueEdgeStryle().textStyle(
                               MediaQuery.of(context).size.width * 0.08),
                           textAlign: TextAlign.center,
                         ),
@@ -73,12 +73,12 @@ class LoginPage extends StatelessWidget {
                         ),
                         Gap(MediaQuery.of(context).size.height * 0.04),
                         Divider(
-                          color: AppStryle().whiteCle,
+                          color: BlueEdgeStryle().whiteCle,
                           thickness: 1.5,
                         ),
                         const Gap(10),
                         CircleAvatar(
-                          backgroundColor: AppStryle().whiteCle,
+                          backgroundColor: BlueEdgeStryle().whiteCle,
                           radius: MediaQuery.of(context).size.height * 0.028,
                           child: Image.network(
                               'https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png'),
@@ -91,10 +91,10 @@ class LoginPage extends StatelessWidget {
                 right: 18,
                 child: CircleAvatar(
                   radius: MediaQuery.of(context).size.width * 0.05,
-                  backgroundColor: AppStryle().whiteCle,
+                  backgroundColor: BlueEdgeStryle().whiteCle,
                   child: CircleAvatar(
                     radius: MediaQuery.of(context).size.width * 0.04,
-                    backgroundColor: AppStryle().bluMin,
+                    backgroundColor: BlueEdgeStryle().bluMin,
                   ),
                 ),
               )
