@@ -2,8 +2,8 @@ import 'package:antbery/config/them/blue_edge_style.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class dreawerWidget extends StatelessWidget {
-  const dreawerWidget({
+class DreawerWidget extends StatelessWidget {
+  const DreawerWidget({
     super.key,
   });
 
