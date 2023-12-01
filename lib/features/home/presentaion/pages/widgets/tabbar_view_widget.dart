@@ -14,13 +14,17 @@ class TabBarViewWidget extends StatelessWidget {
       children: [
         Text(
           'Hot Reads',
-          style: ProBlackStyle().btextStyle(20.0),
+          style: TextStyle(fontSize: 20, color: ProBlackStyle().whitecloProBlack
+          // Additional styling options
+          ),
         ),Gap(10),
     HorizontalListview(),
     Gap(30),
     Text(
       'Recent',
-      style: ProBlackStyle().btextStyle(20.0),
+      style:  TextStyle(fontSize: 20, color: ProBlackStyle().whitecloProBlack
+          // Additional styling options
+          ),
     ),
     Gap(10),
     HorizontalListview(),
