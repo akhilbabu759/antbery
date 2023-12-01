@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:antbery/features/bottonavigation/bloc/bloc/bottomnavigation_bloc.dart';
 import 'package:antbery/features/home/data/data_source/remote/book_list_data_source.dart';
 import 'package:antbery/features/home/data/repositories/book_list_repositories_iplement.dart';
 import 'package:antbery/features/home/presentaion/bloc/bloc/carousel_bloc.dart';
@@ -26,7 +27,7 @@ void main() async {
   // BookListRemoteDataSourceImpl( ).getBookList();
 
   runApp(DevicePreview(
-    enabled: false,
+    enabled:false,
     builder: (context) => const MyApp(),
   ));
 }
@@ -36,16 +37,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   
     return MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (_) => locator<CarouselBloc>(),
         ),
         BlocProvider(
-          create: (context) => locator<CarouselIndexBloc>(),
+          create: (_) => locator<CarouselIndexBloc>(),
         ),
         BlocProvider(
-          create: (context) => locator<HomeBooksBloc>(),
+          create: (_) => locator<HomeBooksBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => locator<BottomnavigationBloc>(),
         )
       ],
       child: MaterialApp(
