@@ -1,6 +1,6 @@
 import 'package:antbery/features/home/domain/entities/book_list_entities.dart';
 import 'package:antbery/features/home/domain/usecase/get_book_list.dart';
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
 part 'home_books_event.dart';

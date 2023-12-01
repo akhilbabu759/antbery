@@ -1,7 +1,8 @@
 import 'package:antbery/features/home/domain/entities/carousel_entities.dart';
 import 'package:antbery/features/home/domain/usecase/get_carousel.dart';
-import 'package:bloc/bloc.dart';
+
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'carousel_event.dart';
 part 'carousel_state.dart';
