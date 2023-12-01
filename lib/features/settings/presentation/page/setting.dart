@@ -9,8 +9,8 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-       backgroundColor: ProBlackStyle().grayblackProblack,
+    return Scaffold(
+      backgroundColor: ProBlackStyle().grayblackProblack,
       appBar: AppBar(
         elevation: 0.2,
         backgroundColor: ProBlackStyle().grayblackProblack,
@@ -26,7 +26,97 @@ class Settings extends StatelessWidget {
           style: TextStyle(color: const Color.fromARGB(255, 242, 242, 242)),
         ),
       ),
-      
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(children: [
+          GestureDetector(
+            onTap: () {
+              ;
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ListTile(
+                tileColor: Color.fromARGB(255, 88, 88, 88),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                leading: Text('Country & language',
+                    style:
+                        TextStyle(color: Color.fromARGB(255, 236, 236, 236))),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              ;
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ListTile(
+                tileColor: Color.fromARGB(255, 88, 88, 88),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                leading: Text('About',
+                    style:
+                        TextStyle(color: Color.fromARGB(255, 236, 236, 236))),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              ;
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ListTile(
+                tileColor: Color.fromARGB(255, 88, 88, 88),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                leading: Text('Custoer Service',
+                    style:
+                        TextStyle(color: Color.fromARGB(255, 236, 236, 236))),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              ;
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ListTile(
+                tileColor: Color.fromARGB(255, 88, 88, 88),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                leading: Text('Privicy Police',
+                    style:
+                        TextStyle(color: Color.fromARGB(255, 236, 236, 236))),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Expanded(child: Center(child: Text('Version 1.0.0',style:
+                        TextStyle(color: Color.fromARGB(255, 169, 169, 169)))))
+        ]),
+      ),
     );
   }
 }

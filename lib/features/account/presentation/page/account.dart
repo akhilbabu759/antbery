@@ -166,7 +166,7 @@ class Account extends StatelessWidget {
                         ProBlackStyle().bappSize(context).width * 0.6,
                         ProBlackStyle().bappSize(context).height * 0.064)),
                     backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(196, 136, 2, 2))),
+                        Color.fromARGB(196, 136, 78, 2))),
                 onPressed: () {},
                 child: Center(
                   child: Text('Log Out'),
