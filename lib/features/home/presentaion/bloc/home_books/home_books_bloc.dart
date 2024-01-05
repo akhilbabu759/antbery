@@ -14,6 +14,7 @@ class HomeBooksBloc extends Bloc<HomeBooksEvent, HomeBooksState> {
     result.fold((failure) {
       emit(HomeBookLoadFailure(failure.message));
     }, (data) {
+      
       emit(HomeBookLoaded(data));
     });
     });

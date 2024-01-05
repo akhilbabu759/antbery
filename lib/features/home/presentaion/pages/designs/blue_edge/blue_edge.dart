@@ -50,7 +50,7 @@ class BlueEdge extends StatelessWidget {
                                   fontStyle: FontStyle.italic),
                             ),
                             Gap(10),
-                            HorizontalListview(),
+                           // HorizontalListview(),
                             Gap(20),
                             Text('Recent',
                                 style: TextStyle(
@@ -59,7 +59,7 @@ class BlueEdge extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FontStyle.italic)),
                             Gap(20),
-                            HorizontalListview(),
+                          ////  HorizontalListview(),
                             Gap(20),
                             HomeGrideview()
                           ],

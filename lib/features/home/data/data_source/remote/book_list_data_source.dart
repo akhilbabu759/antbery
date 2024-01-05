@@ -24,25 +24,25 @@ class BookListRemoteDataSourceImpl extends BookListRemoteDataSource{
       Map<String, dynamic> parsedData = h.first as Map<String, dynamic>;
       // log(parsedData.toString(),name: 'nm3');
   List<Map<String, dynamic>> books = List<Map<String, dynamic>>.from(parsedData['bookslist']);
-  log(books.toString(),name: 'nm4');
+ // log(books.toString(),name: 'nm4');
 
   List<Book> bookList = books.map((bookData) {
-    log(bookData.values.first['image'],name: 'inside1');
+    // log(bookData.values.first['image'],name: 'inside1');
      
-     log(List<String>.from(bookData.values.first["libery' s"]).toString(),name: 'inside2');
+    //  log(List<String>.from(bookData.values.first["libery' s"]).toString(),name: 'inside2');
     return Book.fromJson(bookData);
   }).toList();
-  log(bookList.toString(),name: 'nm5');
+  // log(bookList.toString(),name: 'nm5');
 
   // Now you have a list of Book objects
-  for (Book book in bookList) {
-    log("Title: ${book.bookName}",name: '1');
-    log("Image URL: ${book.imgUrl}",name: '2');
-    log("Libraries: ${book.libery}",name: '3');
-    log("Rating: ${book.rating}",name: '4');
-    log("Description: ${book.description}",name: '5');
-    log("\n");
-  }
+  // for (Book book in bookList) {
+  //   log("Title: ${book.bookName}",name: '1');
+  //   log("Image URL: ${book.imgUrl}",name: '2');
+  //   log("Libraries: ${book.libery}",name: '3');
+  //   log("Rating: ${book.rating}",name: '4');
+  //   log("Description: ${book.description}",name: '5');
+  //   log("\n");
+  // }
   return bookList;
 
     }catch (e) {

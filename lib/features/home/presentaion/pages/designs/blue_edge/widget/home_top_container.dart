@@ -1,5 +1,6 @@
 import 'package:antbery/config/them/blue_edge_style.dart';
-import 'package:antbery/features/home/presentaion/bloc/bloc/carousel_bloc.dart';
+import 'package:antbery/features/home/presentaion/bloc/carousel/carousel_bloc.dart';
+
 
 import 'package:antbery/features/home/presentaion/bloc/carousel_index_bloc/carousel_bloc.dart';
 import 'package:antbery/features/search/presentation/pages/search_widget.dart';

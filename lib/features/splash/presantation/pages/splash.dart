@@ -1,5 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:antbery/features/auth/presentation/pages/login.dart';
+import 'package:antbery/blue/auth/presentation/pages/login.dart';
 import 'package:antbery/features/bottonavigation/page/bottom_navigation.dart';
 import 'package:antbery/features/home/presentaion/bloc/home_books/home_books_bloc.dart';
 import 'package:antbery/features/home/presentaion/pages/home.dart';
@@ -8,12 +8,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
-      context.read<HomeBooksBloc>().add(OnBookget());
-   
+    context.read<HomeBooksBloc>().add(const OnBookget());
+
     return AnimatedSplashScreen(
       splash: SizedBox(
         height: MediaQuery.of(context).size.height,
@@ -35,15 +34,7 @@ class SplashScreen extends StatelessWidget {
           )
         ]),
       ),
-      nextScreen:  BlocBuilder<HomeBooksBloc, HomeBooksState>(
-        builder: (context, state) { 
-          if (state is HomeBookLoaded) { 
-            return Bottomnavigation(model: state.result.first,);
-            }
-            else{
-              return Text('data');
-            }
-            }),
+      nextScreen: const Bottomnavigation(),
       splashIconSize: MediaQuery.of(context).size.height * 0.5,
     );
   }

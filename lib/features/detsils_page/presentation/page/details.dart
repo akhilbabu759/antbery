@@ -4,10 +4,14 @@ import 'dart:ui';
 import 'package:antbery/config/them/pro_black.dart';
 import 'package:antbery/features/home/domain/entities/book_list_entities.dart';
 import 'package:antbery/features/libery_select_page/presentation/page/libery_select_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gap/gap.dart';
+import 'package:quickalert/quickalert.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({super.key, required this.model});
@@ -21,8 +25,9 @@ class DetailsPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
           backgroundColor: ProBlackStyle().graywhiteProBlack,
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LiberySelectPage(model: model) ,));
-
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => LiberySelectPage(model: model),
+            ));
           },
           child: Icon(
             Icons.keyboard_double_arrow_right_sharp,
@@ -35,7 +40,7 @@ class DetailsPage extends StatelessWidget {
               height: double.infinity,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(242, 195, 194, 194),
+                  color: const Color.fromARGB(242, 195, 194, 194),
                   image: DecorationImage(
                     image: NetworkImage(model.imgUrl),
                     fit: BoxFit.cover,
@@ -244,10 +249,78 @@ class DetailsPage extends StatelessWidget {
           Positioned(
             top: ProBlackStyle().bappSize(context).height * 0.29,
             right: ProBlackStyle().bappSize(context).width * 0.1,
-            child: Icon(
-              Icons.bookmark,
-              color: ProBlackStyle().whitecloProBlack,
-              size: ProBlackStyle().bappSize(context).width * 0.08,
+            child: GestureDetector(
+              onTap: () async {
+                try {
+                  CollectionReference queueCollection =
+                      FirebaseFirestore.instance.collection('queue');
+                  DocumentReference akhilDoc = queueCollection
+                      .doc(FirebaseAuth.instance.currentUser!.email);
+
+                  DocumentSnapshot docSnapshot = await akhilDoc.get();
+                  if (!docSnapshot.exists) {
+                    // If the document doesn't exist, create it with the list containing the map value
+                    await akhilDoc.set({
+                      'list': [
+                        /* initial map value */ {
+                          model.bookName: {
+                            'category': model.category,
+                            'description': model.description,
+                            'image': model.imgUrl,
+                            "libery' s": model.libery,
+                            'rating': model.rating,
+                            'readers': model.readers
+                          },
+                        }
+                      ]
+                    });
+                    print('Document created successfully');
+                  } else {
+                    List<dynamic> currentList = (docSnapshot.data()
+                            as Map<String, dynamic>?)?['list'] ??
+                        [];
+                    bool bookExists =
+                        currentList.any((map) => map[model.bookName] != null);
+
+                    if (!bookExists) {
+                      // Map value to be added to the list
+                      Map<String, dynamic> mapValue = {
+                        model.bookName: {
+                          'category': model.category,
+                          'description': model.description,
+                          'image': model.imgUrl,
+                          "libery' s": model.libery,
+                          'rating': model.rating,
+                          'readers': model.readers
+                        },
+                      };
+
+                      // Add the map value to the list
+                      currentList.add(mapValue);
+
+                      // Update the 'list' field in the document with the updated list
+                      await akhilDoc.update({'list': currentList});
+
+                      print('Map value added to the list successfully');
+                      QuickAlert.show(
+                          context: context, type: QuickAlertType.success);
+                    } else {
+                      QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.error,
+                          title: 'already exists',
+                          text: '${model.bookName} already exists in Qeue');
+                    }
+                  }
+                } on FirebaseException catch (e) {
+                  log(e.toString(), name: 'njan jackson allada');
+                }
+              },
+              child: Icon(
+                Icons.bookmark,
+                color: ProBlackStyle().whitecloProBlack,
+                size: ProBlackStyle().bappSize(context).width * 0.08,
+              ),
             ),
           ),
           Positioned(

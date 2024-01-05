@@ -3,6 +3,7 @@ import 'package:antbery/features/home/domain/usecase/get_carousel.dart';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 
 part 'carousel_event.dart';
 part 'carousel_state.dart';
